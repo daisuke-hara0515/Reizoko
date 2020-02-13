@@ -1,0 +1,2 @@
+class ReizokoController < ApplicationController
+end

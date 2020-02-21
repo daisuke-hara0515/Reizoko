@@ -1,4 +1,4 @@
 class ReizokoController < ApplicationController
-    def index
-    end
+    # def index
+    # end
 end

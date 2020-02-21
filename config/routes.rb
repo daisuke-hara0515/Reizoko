@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get 'reizoko/index'
+  # get 'reizoko/index'
+  resources :reizoko
 end

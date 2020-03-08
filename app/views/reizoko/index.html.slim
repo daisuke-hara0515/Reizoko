@@ -6,12 +6,14 @@ html
     = stylesheet_link_tag 'reizoko', media: 'all'
 
   body
-    header id="itempage"
-      nav
-        ul
-          li <a href="/reizoko/new" target="_blank"> NEW
-          li <a href="#"> ABOUT
-          li <a href="#"> HELP
+    header class="navbar navbar-fixed-top navbar-inverse"
+      div class="container"
+        = link_to "冷蔵庫在庫管理", '#', id: "logo"
+        nav
+          ul class="nav navbar-nav navbar-right"
+            li <a href="/reizoko/new" target="_blank"> NEW
+            li <a href="#"> ABOUT
+            li <a href="#"> HELP
           /ul liタグを使う場合、aタグを<>で囲む必要あり
     main
       div class="row"

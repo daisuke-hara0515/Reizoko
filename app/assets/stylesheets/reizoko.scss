@@ -1,4 +1,4 @@
-//reizoko.scssを全ページに適応するための共通スタイルファイル
+//reizoko.scssを全ページに適応するための共通スタイルファイルがこのファイル
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -20,4 +20,8 @@ textarea {
 
 .center h1 {
     margin-bottom: 10px;
+}
+//行の高さを調整しているのがline-height
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1;
 }

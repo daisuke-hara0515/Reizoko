@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   # get 'reizoko/index'
-  get "reizoko/form"
+  root 'reizoko#index'
   resources :reizoko
 end

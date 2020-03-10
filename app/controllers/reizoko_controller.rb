@@ -1,6 +1,6 @@
 class ReizokoController < ApplicationController
-    # def index
-    # end
+    def new
+    end
     def form
     end
 end

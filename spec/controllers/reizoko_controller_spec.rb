@@ -6,5 +6,9 @@ class ReizokoControllerTest < ActionController::TestCase
             get :index
             assert_response :success
         end
+        it 'newページをgetを使って取得できる' do
+            get :new
+            assert_response :success
+        end
     end
 end

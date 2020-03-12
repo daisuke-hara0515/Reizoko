@@ -1,8 +1,9 @@
+- provide(:title,"index")
 doctype html
 html
   head
     meta charset="utf-8"
-    title Reizoko Stock | 冷蔵庫の残り物たち
+    title <= yield(:title) > | Reizoko Stock | 
     = stylesheet_link_tag 'reizoko', media: 'all'
 
   body

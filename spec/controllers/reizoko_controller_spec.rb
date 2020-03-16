@@ -1,14 +1,13 @@
 require 'rails_helper'
 
-class ReizokoControllerTest < ActionController::TestCase
-    describe ReizokoController do
-        it 'indexページをgetを使って取得できる' do
-            get :index
-            assert_response :success
-        end
-        it 'newページをgetを使って取得できる' do
-            get :new
-            assert_response :success
-        end
+describe ReizokoController do
+    it 'indexページをgetを使って取得できる' do
+        get :index
+        assert_response :success
+        assert_select "title" , "Reizoko"
+    end
+    it 'newページをgetを使って取得できる' do
+        get :new
+        assert_response :success
     end
 end

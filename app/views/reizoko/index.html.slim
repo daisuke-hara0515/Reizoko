@@ -6,8 +6,12 @@ html
     title <= yield(:title) > | Reizoko Stock | 
     = stylesheet_link_tag 'reizoko', media: 'all'
 
-  body
     = render 'layouts/header'
+table
+  tbody
     - @stock.each do |stock|
-      = stock.name
-        = br
+      tr
+        td = stock.name
+        td = stock.stock
+
+br

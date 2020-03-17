@@ -7,7 +7,8 @@ html
     = stylesheet_link_tag 'reizoko', media: 'all'
 
     = render 'layouts/header'
-table
+
+table border="1"
   tbody
     - @stock.each do |stock|
       tr

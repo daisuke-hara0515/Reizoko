@@ -8,8 +8,6 @@ html
 
   body
     = render 'layouts/header'
-    main
-      div class="row"
-        div class="center jumbotron"
-          h1 冷蔵庫のストックを管理する
-          p 冷蔵庫の在庫って忘れがち・・・。そんな悩みをこのアプリで解消する！
+    - @stock.each do |stock|
+      = stock.name
+        = br

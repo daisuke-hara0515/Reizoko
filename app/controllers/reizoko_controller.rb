@@ -2,12 +2,11 @@ class ReizokoController < ApplicationController
     def login
     end
 
-    def zaiko
-        @stock = Stock.find(params[:id])
+    def index
+        @stock = Stock.all
     end
 
     def new
-        @stock = Stock.new
     end
     
     def form

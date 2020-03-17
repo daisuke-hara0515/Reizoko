@@ -8,7 +8,7 @@ html
 
     = render 'layouts/header'
 
-table border="1"
+table border="1" width="200" height="100"
   thead
     tr
       th お名前
@@ -18,6 +18,6 @@ table border="1"
     - @stock.each do |stock|
       tr
         td = stock.name
-        td = stock.stock
+        td align="center" = stock.stock
 
 br

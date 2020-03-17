@@ -9,6 +9,11 @@ html
     = render 'layouts/header'
 
 table border="1"
+  thead
+    tr
+      th お名前
+      th 在庫
+
   tbody
     - @stock.each do |stock|
       tr

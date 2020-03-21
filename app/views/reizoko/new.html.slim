@@ -8,3 +8,15 @@ html
 
   body
     = render 'layouts/header'
+  main
+    h1 新規在庫登録
+  
+    /local: trueはajax(非同期通信を行う時)を利用する場合はfalseにする
+    = form_with model: @stock, local: true do |f|
+      .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', id: 'task_name'
+      .form-group
+        = f.label :description
+        = f.text_area :description, rows: 2, class: 'form-control', id: 'task_description'
+      = f.submit nil, class: 'btn btn-primary'       

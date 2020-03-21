@@ -29,8 +29,9 @@ h1,h2,h3,h4,h5,h6 {
 h1 {
     font-size: 3em; //文字の大きさ
     letter-spacing: -2px; //文字間(ここでは冷蔵庫のストック〜の部分)のスペースを調整
-    margin-bottom: 30px; //下マージンを指定する 
-    text-align: center; //文字の位置
+    margin-bottom: 30px; //下マージンを指定する
+    margin-left: 100px; 
+    text-align: left; //文字の位置
     color: red;
 }
 

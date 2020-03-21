@@ -8,16 +8,17 @@ html
 
     = render 'layouts/header'
 
-table border="1" width="200" height="100"
-  thead
-    tr
-      th お名前
-      th 在庫
+  main
+    table border="1" width="200" height="100"
+      thead
+        tr
+          th お名前
+          th 在庫
 
-  tbody
-    - @stock.each do |stock|
-      tr
-        td = stock.name
-        td align="center" = stock.stock
+      tbody
+        - @stock.each do |stock|
+          tr
+            td = stock.name
+            td align="center" = stock.stock
 
 br

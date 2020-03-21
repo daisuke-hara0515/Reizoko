@@ -12,11 +12,18 @@ html
     h1 新規在庫登録
   
     /local: trueはajax(非同期通信を行う時)を利用する場合はfalseにする
+    /label :〇〇でラベル表示する
     = form_with model: @stock, local: true do |f|
       .form-group
-        = f.label :name
-        = f.text_field :name, class: 'form-control', id: 'task_name'
+        = f.label :在庫名
+        = f.text_field :name, class: 'form-control'
       .form-group
-        = f.label :description
-        = f.text_area :description, rows: 2, class: 'form-control', id: 'task_description'
+        = f.label :個数
+        = f.text_field :stock, class: 'form-control'
+      .form-group
+        = f.label :単位
+        = f.text_field :unit, class: 'form-control'
+      .form-group
+        = f.label :備考
+        = f.text_field :memo, class: 'form-control'
       = f.submit nil, class: 'btn btn-primary'       

@@ -10,6 +10,9 @@ html
     = render 'layouts/header'
   main
     h1 新規在庫登録
+
+    .nav.justify-content-end
+      = link_to '在庫一覧', root_path, class: 'nav-link'
   
     /local: trueはajax(非同期通信を行う時)を利用する場合はfalseにする
     /label :〇〇でラベル表示する

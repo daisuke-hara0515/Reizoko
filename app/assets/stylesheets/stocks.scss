@@ -1,3 +1,71 @@
-// Place all the styles related to the stocks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+    padding-top: 60px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+//行の高さを調整しているのがline-height
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em; //文字の大きさ
+    letter-spacing: -2px; //文字間(ここでは冷蔵庫のストック〜の部分)のスペースを調整
+    margin-bottom: 30px; //下マージンを指定する
+    margin-left: 100px; 
+    text-align: left; //文字の位置
+    color: red;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+#logo {
+    float: left; //floatは浮かべて表示する
+}
+
+table {
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+thead {
+    font-size: 1.5em;
+    
+}
+
+tbody {
+    font-size: 1.3em;
+}
+
+.form-group {
+    margin-left: 60px;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 40px;
+}
+
+.button {
+    margin-left: 60px;
+}

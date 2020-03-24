@@ -9,6 +9,9 @@ html
     = render 'layouts/header'
 
   main
+    .nav.justify-content-end
+      = link_to '新規登録',new_stock_path, class: 'nav-link'
+    
     table border="1" width="200" height="100"
       thead
         tr

@@ -10,8 +10,14 @@ describe StocksController do
         assert_response :success
     end
 
-    it 'rootページから新規登録リンクを踏んでnewページに移ること' do
+    it 'indexページから新規登録リンクを踏んでnewページに移ること' do
+        get :index
+        assert_response :success
 
+    end
+
+    it 'indexページにStockモデルに登録されているデータが全て表示されていること' do
+        
     end
     
     it '在庫名、個数、単位は空では登録できず、エラーが発生すること' do

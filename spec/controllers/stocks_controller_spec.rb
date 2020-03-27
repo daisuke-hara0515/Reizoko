@@ -11,9 +11,12 @@ describe StocksController do
     end
 
     it 'indexページから新規登録リンクを踏んでnewページに移ること' do
-        get :index
+        visit root_path
         assert_response :success
-
+        assert_template 'stocks/index'
+        click_on '新規登録'
+        assert_response :success
+        assert_template 'stocks/new'
     end
 
     it 'indexページにStockモデルに登録されているデータが全て表示されていること' do

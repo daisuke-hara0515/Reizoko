@@ -38,12 +38,14 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'slim-rails'
 
 gem 'bootstrap-sass'
+gem 'rails-controller-testing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
   gem 'sqlite3'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -63,6 +65,8 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'webdrivers'
   gem 'rspec-rails'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :production do

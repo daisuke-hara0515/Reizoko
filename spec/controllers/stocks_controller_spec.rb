@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe StocksController do
-    it 'indexページをgetを使って取得できる' do
-        get :index
-        assert_response :success
-    end
-    it 'newページをgetを使って取得できる' do
-        get :new
-        assert_response :success
-    end
+    # it 'indexページをgetを使って取得できる' do
+    #     get :index
+    #     assert_response :success
+    # end
+    # it 'newページをgetを使って取得できる' do
+    #     get :new
+    #     assert_response :success
+    # end
 
     it 'indexページから新規登録リンクを踏んでnewページに移ること' do
         visit root_path

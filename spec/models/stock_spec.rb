@@ -1,8 +1,12 @@
 require "rails_helper"
 
-RSpec.describe 'stock有効性' do
+RSpec.describe 'Stockモデル',type: :system do
+    describe 'stockモデルの有効性'
+    before do
+        @stock = FactoryBot.create(:stock)
+    end
+
     it 'stock.valid?' do
-        stock = Stock.new
-        expect(stock.valid?).to be true
+        expect(@stock.valid?).to be true
     end
 end

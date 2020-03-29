@@ -12,7 +12,7 @@ class StocksController < ApplicationController
     def create
         stock = Stock.new(stock_params)
         stock.save
-        redirect_to root_path
+        redirect_to root_path, notice: "「#{stock.name}」を新規登録しました！"
     end
 
     def show

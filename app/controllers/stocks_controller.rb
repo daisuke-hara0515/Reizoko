@@ -10,9 +10,11 @@ class StocksController < ApplicationController
 
     # 器にパラメータを注ぐ
     def create
-        stock = Stock.new(stock_params)
-        stock.save
-        redirect_to root_path, notice: "「#{stock.name}」を新規登録しました！"
+        @stock = Stock.new(stock_params)
+        if @stock.save
+        redirect_to root_path, notice: "「#{@stock.name}」を新規登録しました！"
+        else render :new
+        end
     end
 
     def show

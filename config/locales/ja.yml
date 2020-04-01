@@ -10,7 +10,7 @@ ja:
     models:
       stock: 在庫
     attributes:
-      task:
+      stock:
         id: ID
         name: 在庫名
         stock: 在庫数

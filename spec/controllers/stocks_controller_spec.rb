@@ -19,8 +19,14 @@ describe StocksController do
         assert_template 'stocks/new'
     end
 
-    it 'indexページにStockモデルに登録されているデータが全て表示されていること' do
-        
+    # このテストの書き方は
+    it '新規登録が成功すること' do
+        visit new_stock_path
+        fill_in 'stock_name', with: 'トマト'
+        fill_in 'stock_stock' , with: 1
+        fill_in 'stock_unit' , with: '個'
+        click_button '登録する'
+        expect(page).to have_content '「トマト」を新規登録しました！'        
     end
     
     it '在庫名、個数、単位は空では登録できず、エラーが発生すること' do

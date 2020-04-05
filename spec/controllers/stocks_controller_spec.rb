@@ -19,8 +19,8 @@ describe StocksController do
         assert_template 'stocks/new'
     end
 
-    # このテストの書き方は
-    it '新規登録が成功すること' do
+    # このテストの書き方は正しいのか？なんかもっとまとめられないか
+    it '新規登録が成功すること(正常系)' do
         visit new_stock_path
         fill_in 'stock_name', with: 'トマト'
         fill_in 'stock_stock' , with: 1
@@ -29,12 +29,12 @@ describe StocksController do
         expect(page).to have_content '「トマト」を新規登録しました！'        
     end
     
-    it '在庫名、個数、単位は空では登録できず、エラーが発生すること' do
-
+    #このテストの書き方は正しいのか？なんかもっとまとめられないか
+    it '新規登録が失敗すること(異常系)' do
+        visit new_stock_path
+        fill_in 'stock_stock' , with: 1
+        fill_in 'stock_unit' , with: '個'
+        click_button '登録する'
+        expect(page).to have_content '在庫名を入力してください'
     end
-    
-    it '在庫名はstring、個数はinteger、単位はstring以外を入力したらエラーになること' do
-
-    end
-
 end

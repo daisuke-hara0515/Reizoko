@@ -13,7 +13,7 @@ html
     .nav.justify-content-end
       = link_to '新規登録',new_stock_path, class: 'nav-link'
     
-    table border="1" width="200" height="100"
+    table border="1" width="400" height="100"
       thead
         tr
           th お名前
@@ -26,5 +26,6 @@ html
             td = stock.name
             td align="center" = stock.stock
             td align="center" =  stock.unit
+            td align="center" = link_to '編集', edit_stock_path(stock)
 
 br

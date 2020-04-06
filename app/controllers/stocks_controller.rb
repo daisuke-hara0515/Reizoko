@@ -24,6 +24,14 @@ class StocksController < ApplicationController
         @stock = Stock.find(params[:id])
     end
 
+    def update
+        @stock = Stock.find(params[:id])
+        if @stock.update_attributes(stock_params)
+
+        else render :edit
+        end
+    end
+
     private
 
     def stock_params

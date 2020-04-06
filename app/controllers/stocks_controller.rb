@@ -20,6 +20,10 @@ class StocksController < ApplicationController
     def show
     end
 
+    def edit
+        @stock = Stock.find(params[:id])
+    end
+
     private
 
     def stock_params

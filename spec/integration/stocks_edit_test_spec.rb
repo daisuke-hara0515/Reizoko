@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class StocksEditTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  describe Stocks do
+    before do
+      @params = {name: "トマト", stock: 1, unit: "個"}
+    end
+    
+    it "登録データが更新されていること" do
+      
 end

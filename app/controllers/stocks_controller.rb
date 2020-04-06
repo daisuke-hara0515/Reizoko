@@ -27,7 +27,7 @@ class StocksController < ApplicationController
     def update
         @stock = Stock.find(params[:id])
         if @stock.update_attributes(stock_params)
-
+            redirect_to root_path, notice: "「#{@stock.name}」が更新されました！"
         else render :edit
         end
     end

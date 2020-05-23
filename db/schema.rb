@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_001311) do
+ActiveRecord::Schema.define(version: 2020_05_23_130205) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "name"
@@ -21,12 +21,13 @@ ActiveRecord::Schema.define(version: 2020_02_18_001311) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "zaikos", force: :cascade do |t|
-    t.string "name"
-    t.integer "stock"
-    t.integer "unit"
+  create_table "users", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

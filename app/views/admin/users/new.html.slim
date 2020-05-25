@@ -1,5 +1,5 @@
 h1 ユーザー登録
-
+/ [:admin,@user]はform_with model: @user, url: admin_users_pathの省略バージョン /
 = form_with model: [:admin,@user], local: true do |f|
   .form-group
   = f.label :name, '名前'

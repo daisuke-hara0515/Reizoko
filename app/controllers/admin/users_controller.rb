@@ -23,39 +23,30 @@ class Admin::UsersController < ApplicationController
     else
       render :new
     end
+  end
 
-    def update
-      @user = User.find(params[:id])
+  def update
+    @user = User.find(params[:id])
 
-      if @user.update(user_params)
-        redirect_to admin_user_path(@user), notice: "ユーザー「#{@user.name}」を更新しました。"
-      else
-        render :new
-      end
-    end
-
-    def destroy #登録ユーザーを完全に削除する
-      @user = User.find(params[:id])
-      @user.destroy
-
-      # _urlは絶対パス。httpの仕様上、リダイレクトの時に完全なURLを求められる為。
-      # admin_usersからadmin_userという別のURLに飛ばしたいから_url
-      redirect_to admin_users_url, notice: "ユーザー「#{@user.name}」を削除しました。"
-    end
-
-    private
-
-    def user_params #strong parameter
-      params.require(:user).permit(:name,:email,:admin,:password,:password_confirmation)
+    if @user.update(user_params)
+      redirect_to admin_user_path(@user), notice: "ユーザー「#{@user.name}」を更新しました。"
+    else
+      render :new
     end
   end
 
-  def edit
+  def destroy #登録ユーザーを完全に削除する
+    @user = User.find(params[:id])
+    @user.destroy
+
+    # _urlは絶対パス。httpの仕様上、リダイレクトの時に完全なURLを求められる為。
+    # admin_usersからadmin_userという別のURLに飛ばしたいから_url
+    redirect_to admin_users_url, notice: "ユーザー「#{@user.name}」を削除しました。"
   end
 
-  def show
-  end
+  private
 
-  def index
+  def user_params #strong parameter
+    params.require(:user).permit(:name,:email,:admin,:password,:password_confirmation)
   end
 end

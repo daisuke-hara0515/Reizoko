@@ -3,8 +3,9 @@ h1 ユーザー登録
 / ナビゲーションのコンテンツを右寄せ /
 .nav.justify-content-end
   = link_to '一覧', admin_users_path, class: 'nav-link'
-
+/ render pertial: 'パーシャルファイル名', locals: {ローカル変数: 渡したい値}/
 = render pertial: 'form', locals: {user: @user}
+
 / [:admin,@user]はform_with model: @user, url: admin_users_pathの省略バージョン /
 = form_with model: [:admin,@user], local: true do |f|
   .form-group

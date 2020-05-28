@@ -5,6 +5,7 @@ h1 ユーザーの詳細
 table.table.table-hover
   tbody
     tr
+      / human_attribute_nameはactiverecordmodelの翻訳を行う(https://railsguides.jp/i18n.html) /
       th = User.human_attribute_name(:id)
       td = @user.id
     tr

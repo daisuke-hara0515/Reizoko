@@ -1,0 +1,7 @@
+h1 ユーザー登録
+
+/ ナビゲーションのコンテンツを右寄せ /
+.nav.justify-content-end
+  = link_to '一覧', admin_users_path, class: 'nav-link'
+/ render pertial: 'パーシャルファイル名', locals: {ローカル変数: 渡したい値}/
+= render partial: 'form', locals: { user: @user}

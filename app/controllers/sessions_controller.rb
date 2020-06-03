@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    reset_session
+    reset_session #セッション情報を完全に削除するため。user_idだけならsession.delete(:user_id)
     redirect_to root_path, notice: 'ログアウトしたよ！'
   end
 

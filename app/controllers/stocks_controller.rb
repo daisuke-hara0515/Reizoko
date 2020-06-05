@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
     def index
-        @stock = Stock.all
+        @stock = current_user.stocks
     end
     
     # 器の準備

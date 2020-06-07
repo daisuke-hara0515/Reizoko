@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
-    def index
-        @stock = current_user.stocks
+    def index # order(name: :asc)で名前順に表示させるようにしたい
+        @stock = current_user.stocks.order(name: :asc)
     end
     
     # 器の準備

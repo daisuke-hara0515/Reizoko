@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'ログイン成功'
+      redirect_to stocks_path, notice: 'ログイン成功'
     else
       render :new
     end

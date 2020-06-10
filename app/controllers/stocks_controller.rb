@@ -1,6 +1,6 @@
 class StocksController < ApplicationController
-    def index
-        @stock = Stock.all
+    def index # order(name: :asc)で名前順に表示させるようにしたい
+        @stock = current_user.stocks.order(name: :asc)
     end
     
     # 器の準備
@@ -10,9 +10,10 @@ class StocksController < ApplicationController
 
     # 器にパラメータを注ぐ
     def create
-        @stock = Stock.new(stock_params)
+        @stock = current_user.stocks.new(stock_params)
+        
         if @stock.save
-        redirect_to root_path, notice: "「#{@stock.name}」を新規登録しました！"
+          redirect_to @stock, notice: "「#{@stock.name}」を新規登録しました！"
         else render :new
         end
     end

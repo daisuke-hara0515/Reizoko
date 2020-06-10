@@ -4,4 +4,6 @@ class Stock < ApplicationRecord
         validates :stock
         validates :unit
     end
+
+    belongs_to :user
 end

@@ -13,7 +13,7 @@ class StocksController < ApplicationController
         @stock = current_user.stocks.new(stock_params)
         
         if @stock.save
-          redirect_to @stock, notice: "「#{@stock.name}」を新規登録しました！"
+          redirect_to stocks_path, notice: "「#{@stock.name}」を新規登録しました！"
         else render :new
         end
     end

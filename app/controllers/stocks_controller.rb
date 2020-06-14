@@ -33,6 +33,12 @@ class StocksController < ApplicationController
         end
     end
 
+    def destroy
+      @stock = Stock.find(params[:id])
+      @stock.destroy
+      redirect_to stocks_path, notice: "「#{@stock.name}」が削除されました！"
+    end
+
     private
 
     def stock_params

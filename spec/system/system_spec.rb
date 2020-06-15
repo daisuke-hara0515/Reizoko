@@ -1,12 +1,13 @@
 require "rails_helper"
 
-RSpec.describe 'stock管理機能',type: :system do
-  let(:stock) {FactoryBot.create(:stock)}
-  describe 'stock存在性' do
-    it 'is valid?' do
-        expect(stock.valid?).to be true
-    end
-  end
+RSpec.describe 'stockモデル',type: :system do
+  describe 'stock登録' do
+    it '登録ユーザーでログインすると在庫のindexが表示されること' do
+      # ログインページを取得する
+      # 登録ユーザーでログインする
+      # ログインが成功する(ログイン成功のnoticeが表示されること)
+      # indexアクションでstockモデルが取得できること
+
 
   # 在庫情報の更新テストは後ほど作る
   describe '在庫情報がアップデートできること' do

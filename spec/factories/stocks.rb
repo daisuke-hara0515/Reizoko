@@ -3,5 +3,6 @@ FactoryBot.define do
         name {'potato'}
         stock {1}
         unit{'個'}
+        memo {'でかい'}
     end
 end

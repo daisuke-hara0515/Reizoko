@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe 'stock管理画面一覧',type: :system do
   describe 'stock表示機能' do
     before do
-      test_user = FactoryBot.create(:user,name: 'テストユーザー', email: 'testuser@example.com',password: 'password')
-      # テストユーザーのstockを作成する
+      user = FactoryBot.create(:user)
+      FactoryBot.create(:stock, user: user)
     end
     context '登録ユーザーがログインしている時'
       before do

@@ -26,14 +26,6 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       it 'ユーザーAが作成した在庫情報が表示されない' do
         expect(page).to have_no_content 'キャベツ'
       end
-    end
-
-
-    # it '登録ユーザーの在庫が更新できること' do
-      # 適当なstockの編集ボタンをクリックする
-      # 情報を入力する
-      # 保存ボタンをクリックする
-      # 更新が成功する(成功時のnoticeが表示される)
-    # end
+    end  
   end
 end

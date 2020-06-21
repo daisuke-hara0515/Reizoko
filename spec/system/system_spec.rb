@@ -7,19 +7,35 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       user_a = FactoryBot.create(:user, name: 'ユーザーA', email:'a@example.com')
       FactoryBot.create(:stock, name:'キャベツ', user: user_a)
     end
-    context '登録ユーザーがログインしている時'
+    context 'ユーザーAがログインしている時'
       before do
-        # テストユーザーでログインする
+        # ユーザーAでログインする
         visit login_path
         fill_in 'メールアドレス', with: 'a@example.com'
         fill_in 'パスワード', with: 'password'
         click_button 'ログインする'
       end
+
+      it 'ユーザーAが作成した在庫が表示される' do
+        # indexアクションでstockモデルが取得できること
+        expect(page).to have_content 'キャベツ'
+      end
       
-      it '登録ユーザーが作成した在庫が表示される' do
-      # indexアクションでstockモデルが取得できること
-      expect(page).to have_content 'キャベツ'
+    context 'ユーザーBがログインしている時' do
+      before do
+        # ユーザーBを作成する
+        user_b = FactoryBot.create(:user, name: 'ユーザーB', email:'b@example.com')
+        visit login_path
+        fill_in 'メールアドレス', with: 'b@example.com'
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログインする'
+      end
+
+      it 'ユーザーAが作成した在庫情報が表示されない' do
+        expect(page).to have_no_content 'キャベツ'
+      end
     end
+
 
     # it '登録ユーザーの在庫が更新できること' do
       # 適当なstockの編集ボタンをクリックする

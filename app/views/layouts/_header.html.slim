@@ -3,7 +3,7 @@ header class="navbar navbar-fixed-top navbar-inverse"
         = link_to image_tag('reizoko_app_logo.png'), '#', id: "logo"
         nav
           ul class="nav navbar-nav navbar-right"
-            if current_user
+            = if current_user
             li.nav-item= link_to 'ログアウト',logout_path, method: :delete, class: 'nav-link'
             li <a href="#"> ABOUT
             li <a href="#"> HELP

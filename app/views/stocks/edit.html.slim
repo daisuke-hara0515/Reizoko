@@ -20,7 +20,7 @@ html
         = f.text_field :name, class: 'form-control'
       .form-group
         = f.label :個数
-        = f.number_field :stock, class: 'form-control'
+        = f.number_field :stock, step: "0.1",class: 'form-control'
       .form-group
         = f.label :単位
         = f.text_field :unit, class: 'form-control'

@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_122702) do
+ActiveRecord::Schema.define(version: 2020_06_28_143610) do
 
   create_table "stocks", force: :cascade do |t|
     t.string "name"
-    t.integer "stock"
+    t.float "stock"
     t.string "unit"
     t.text "memo"
     t.datetime "created_at", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_122702) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

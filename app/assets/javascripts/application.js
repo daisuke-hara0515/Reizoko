@@ -14,3 +14,4 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require tempusdominus-bootstrap-4.js

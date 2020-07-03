@@ -42,6 +42,7 @@ gem 'rails-controller-testing'
 gem 'rails-i18n'
 gem 'mini_racer'
 gem 'bootstrap4-datetime-picker-rails'
+gem 'momentjs-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -25,6 +25,9 @@ html
         = f.label :単位
         = f.text_field :unit, class: 'form-control'
       .form-group
+        = f.label :賞味期限
+        = text_field :expire_date, class: 'form-control datetimepicker-input'
+      .form-group
         = f.label :備考
         = f.text_field :memo, class: 'form-control'
       div class="button"

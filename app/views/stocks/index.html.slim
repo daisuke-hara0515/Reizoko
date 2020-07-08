@@ -19,6 +19,7 @@ html
           th お名前
           th 在庫数
           th 単位
+          th 賞味期限
           th 備考
           th 
 
@@ -28,6 +29,7 @@ html
             td = stock.name
             td align="center" = stock.stock
             td align="center" = stock.unit
+            td align="center" = stock.expire_date
             td align="center" = stock.memo
             td align="center" = link_to '編集', edit_stock_path(stock)
             td align="center" = link_to '削除', stock,method: :delete

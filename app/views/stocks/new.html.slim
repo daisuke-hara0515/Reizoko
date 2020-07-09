@@ -28,7 +28,7 @@ html
         = f.text_field :unit, class: 'form-control'
       .form-group
         = f.label :賞味期限
-        = f.text_field :expire_date, class: 'form-control datetimepicker-input', id: "expire_date", data: {toggle: "datetimepicker", target: "#expire_date"}
+        = f.date_field(:expire_date)
       .form-group
         = f.label :備考
         = f.text_field :memo, class: 'form-control'

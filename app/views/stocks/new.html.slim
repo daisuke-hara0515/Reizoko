@@ -15,22 +15,4 @@ html
   
     /local: trueはajax(非同期通信を行う時)を利用する場合はfalseにする
     /label :〇〇でラベル表示
-    = form_with model: @stock, local: true do |f|
-      = render 'shared/error_messages', model: f.object
-      .form-group
-        = f.label :在庫名
-        = f.text_field :name, class: 'form-control'
-      .form-group
-        = f.label :個数
-        = f.number_field :stock, step: "0.1", class: 'form-control'
-      .form-group
-        = f.label :単位
-        = f.text_field :unit, class: 'form-control'
-      .form-group
-        = f.label :賞味期限
-        = f.date_field(:expire_date)
-      .form-group
-        = f.label :備考
-        = f.text_field :memo, class: 'form-control'
-      div class="button"
-        = f.submit nil, class: 'btn btn-primary'
+    = render "shared/shared_forms"

@@ -11,7 +11,7 @@ class StocksController < ApplicationController
     # 器にパラメータを注ぐ
     def create
         @stock = current_user.stocks.new(stock_params)
-        
+        @stock.expire_date = Date.parse(stock_params[:expire_date])
         if @stock.save
           redirect_to stocks_path, notice: "「#{@stock.name}」を新規登録しました！"
         else render :new
@@ -42,6 +42,6 @@ class StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:name,:unit,:stock,:memo)
+        params.require(:stock).permit(:name,:unit,:stock,:expire_date,:memo)
     end
 end

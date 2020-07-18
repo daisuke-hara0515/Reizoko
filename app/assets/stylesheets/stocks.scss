@@ -1,5 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "tempusdominus-bootstrap-4.css";
+@import "font-awesome";
+@import "tempusdominus-bootstrap-4.css";
 
 body {
     padding-top: 60px;
@@ -68,4 +71,8 @@ input[type="text"] {
 
 .button {
     margin-left: 60px;
+}
+
+.expired {
+    color: red;
 }

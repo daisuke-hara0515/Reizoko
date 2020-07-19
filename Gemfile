@@ -44,6 +44,8 @@ gem 'mini_racer'
 gem 'bootstrap4-datetime-picker-rails'
 gem 'momentjs-rails'
 gem 'font-awesome-rails'
+gem 'line-bot-api'
+gem 'dotenv-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

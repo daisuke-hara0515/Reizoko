@@ -29,7 +29,6 @@ class LinebotController < ApplicationController
             type: 'text',
             text: event.message['text'] #テキストでメッセージをハッシュでmessageに突っ込む？
           }
-          client.reply_message(event['replyToken'], message)
         end
     end
     }

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  post '/callback' => 'linebot#callback' #/callbackにLINEからアクセスがあった時。
+  post '/callback', to: 'linebot#callback' #/callbackにLINEからアクセスがあった時。
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    # helper_methodはcontrollerに定義したメソッドをviewでも使えるようにする。
+  
+  # helper_methodはcontrollerに定義したメソッドをviewでも使えるようにする。
     helper_method :current_user
     before_action :login_required #login_requiredメソッドを定義し、ログインしていない場合は在庫管理できないようにする。
 

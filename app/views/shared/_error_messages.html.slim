@@ -1,6 +1,6 @@
-- if @stock.errors.any?
+- if @stocks.errors.any?
   div class = "alert alert-warning"
     ul
-      - @stock.errors.full_messages.each do |msg|
+      - @stocks.errors.full_messages.each do |msg|
         li
           = msg

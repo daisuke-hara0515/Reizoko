@@ -13,7 +13,12 @@ html
     .nav.justify-content-end
       = link_to '新規登録',new_stock_path, class: 'btn btn-primary'
     
-    table border="1" width="400" height="100"
+    br
+
+    .nav.justify-content-end
+      = link_to "csvダウンロード", stocks_path(format: :csv) ,class: 'btn btn-primary'
+    
+    table border="1" width="500" height="100"
       thead
         tr
           th お名前
@@ -24,7 +29,7 @@ html
           th 
 
       tbody
-        - @stock.each do |stock|
+        - @stocks.each do |stock|
           tr
             td = stock.name
             td align="center" = stock.stock

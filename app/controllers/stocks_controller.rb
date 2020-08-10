@@ -1,6 +1,12 @@
 class StocksController < ApplicationController
     def index # order(name: :asc)で名前順に表示させるようにしたい
         @stock = current_user.stocks.order(name: :asc)
+        respond_to do |format|
+          format.html
+          format.csv do
+            send_data render_to_string,filename:"stocks.csv",type: :csv
+          end
+        end
     end
     
     # 器の準備

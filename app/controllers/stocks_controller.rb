@@ -16,7 +16,7 @@ class StocksController < ApplicationController
             header = %w(name stock unit)
             csv << header
 
-            stocks.each do |post|
+            stocks.each do |stock|
                 values = [stock.name,stock.stock,stock.unit]
                 csv << values
             end

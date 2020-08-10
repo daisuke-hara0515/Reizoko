@@ -10,6 +10,19 @@ class StocksController < ApplicationController
           end
         end
     end
+
+    def send_posts_csv(stocks)
+        csv_data = CSV.generate do |csv|
+            header = %w(name stock unit)
+            csv << header
+
+            stocks.each do |post|
+                values = [stock.name,stock.stock,stock.unit]
+                csv << values
+            end
+        end
+        send_data(csv_data, filename: "stocks.csv")
+    end
     
     # 器の準備
     def new

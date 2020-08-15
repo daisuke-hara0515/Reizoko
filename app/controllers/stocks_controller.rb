@@ -23,6 +23,11 @@ class StocksController < ApplicationController
         end
         send_data(csv_data, filename: "stocks.csv")
     end
+
+    def import
+        Stock.import(params[:file])
+        redirect_to stocks_url
+    end
     
     # 器の準備
     def new

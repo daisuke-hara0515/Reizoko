@@ -22,7 +22,7 @@ class Stock < ApplicationRecord
 
     # 更新を許可するカラムを定義
     def self.updatable_attributes
-        ["id","name","stock","unit","memo","expire_date","user_id"]
+        ["id","name","stock","unit","memo","expire_date"]
     end
 
 end

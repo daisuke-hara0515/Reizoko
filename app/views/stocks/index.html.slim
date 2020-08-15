@@ -21,6 +21,7 @@ html
 
     = form_tag import_stocks_path, multipart: true do
       = file_field_tag 'file'
+      = submit_tag "アップロード"
  
     table border="1" width="500" height="100"
       thead

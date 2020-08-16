@@ -17,7 +17,7 @@ class StocksController < ApplicationController
             csv << header
 
             stocks.each do |stock|
-                values = [stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
+                values = [stock.id,stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
                 csv << values
             end
         end

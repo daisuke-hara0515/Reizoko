@@ -9,9 +9,6 @@ html
     = render 'layouts/header'
   main
     h1 在庫の編集
-    .login_user
-      ログインユーザー名 
-      = current_user.name
 
     .nav.justify-content-end
       = link_to '在庫一覧', stocks_path, class: 'nav-link'

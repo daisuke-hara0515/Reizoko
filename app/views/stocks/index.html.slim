@@ -10,6 +10,9 @@ html
 
   main
     h1　在庫一覧
+    .login_user
+      ログインユーザー名 
+      = current_user.name
     .nav.justify-content-end
       = link_to '新規登録',new_stock_path, class: 'btn btn-primary'
     

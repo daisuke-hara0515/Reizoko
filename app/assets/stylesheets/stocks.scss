@@ -51,9 +51,39 @@ p {
 
 table {
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 0px;
+    width: 100%;
 
 }
+
+th {
+    text-align: center;
+}
+
+.contrlo_number {
+    width: 10%;
+}
+
+.name {
+    width: 25%;
+}
+
+.stock {
+    width: 10%;
+}
+
+.unit {
+    width: 5%;
+}
+
+.expire_date {
+    width: 10%;
+}
+
+.memo {
+    width: 25%;
+}
+
 thead {
     font-size: 1.5em;
     

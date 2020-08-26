@@ -26,16 +26,18 @@ html
     table border="1" width="500" height="100"
       thead
         tr
-          th お名前
-          th 在庫数
-          th 単位
-          th 賞味期限
-          th 備考
+          th class="contrlo_number" 管理番号
+          th class="name" 在庫名
+          th class="stock" 在庫数
+          th class="unit" 単位
+          th class="expire_date" 賞味期限
+          th class="memo" 備考
           th 
 
       tbody
         - @stocks.each do |stock|
           tr
+            td = stock.control_number
             td = stock.name
             td align="center" = stock.stock
             td align="center" = stock.unit

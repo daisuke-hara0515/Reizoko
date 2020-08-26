@@ -68,6 +68,6 @@ class StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:name,:unit,:stock,:expire_date,:memo)
+        params.require(:stock).permit(:name,:unit,:stock,:expire_date,:memo,:control_number)
     end
 end

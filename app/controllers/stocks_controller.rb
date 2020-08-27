@@ -13,11 +13,11 @@ class StocksController < ApplicationController
 
     def send_posts_csv(stocks)
         csv_data = CSV.generate do |csv|
-            header = %w(id name stock unit memo expire_date)
+            header = %w(control_number name stock unit memo expire_date)
             csv << header
 
             stocks.each do |stock|
-                values = [stock.id,stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
+                values = [stock.control_number,stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
                 csv << values
             end
         end

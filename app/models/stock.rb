@@ -1,5 +1,6 @@
 class Stock < ApplicationRecord
     with_options presence: true do
+        validates :control_number
         validates :name
         validates :stock
         validates :unit

@@ -1,9 +1,6 @@
 = form_with model: @stocks, local: true do |f|
       = render 'shared/error_messages', model: f.object
       .form-group
-        = f.label :管理番号
-        = f.number_field :control_number, class: 'form-control'
-      .form-group
         = f.label :在庫名
         = f.text_field :name, class: 'form-control'
       .form-group

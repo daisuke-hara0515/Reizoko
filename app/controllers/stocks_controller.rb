@@ -2,7 +2,7 @@ require 'csv'
 
 class StocksController < ApplicationController
     def index # order(name: :asc)で名前順に表示させるようにしたい
-        @stocks = current_user.stocks.order(name: :asc)
+        @stocks = current_user.stocks.order(control_number: :asc)
         respond_to do |format|
           format.html
           format.csv do |csv|

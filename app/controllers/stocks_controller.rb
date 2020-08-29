@@ -2,7 +2,7 @@ require 'csv'
 
 class StocksController < ApplicationController
     def index # order(name: :asc)で名前順に表示させるようにしたい
-        @stocks = current_user.stocks.order(name: :asc)
+        @stocks = current_user.stocks.order(control_number: :asc)
         respond_to do |format|
           format.html
           format.csv do |csv|
@@ -13,11 +13,11 @@ class StocksController < ApplicationController
 
     def send_posts_csv(stocks)
         csv_data = CSV.generate do |csv|
-            header = %w(id name stock unit memo expire_date)
+            header = %w(control_number name stock unit memo expire_date)
             csv << header
 
             stocks.each do |stock|
-                values = [stock.id,stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
+                values = [stock.control_number,stock.name,stock.stock,stock.unit,stock.memo,stock.expire_date]
                 csv << values
             end
         end
@@ -37,6 +37,7 @@ class StocksController < ApplicationController
     # 器にパラメータを注ぐ
     def create
         @stocks = current_user.stocks.new(stock_params)
+        @stocks.control_number = current_user.stocks.pluck(:control_number).max.next
         @stocks.expire_date = Date.parse(stock_params[:expire_date])
         if @stocks.save
           redirect_to stocks_path, notice: "「#{@stocks.name}」を新規登録しました！"
@@ -68,6 +69,6 @@ class StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:name,:unit,:stock,:expire_date,:memo)
+        params.require(:stock).permit(:name,:unit,:stock,:expire_date,:memo,:control_number)
     end
 end

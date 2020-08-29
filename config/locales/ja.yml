@@ -12,6 +12,7 @@ ja:
     attributes:
       stock:
         id: ID
+        control_number: 管理番号
         name: 在庫名
         stock: 個数
         unit: 単位

@@ -26,6 +26,25 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       it 'navbarにユーザーAが表示されないこと' do
         expect(page).to have_no_content 'ユーザーA'
       end
-    end  
+    end
+  end
+  describe 'Stock(在庫)に関するテスト' do
+    let(:user_a){FactoryBot.create(:user, name: 'ユーザーA', email:'a@example.com')}
+    before do
+      visit login_path
+      fill_in 'メールアドレス', with: login_user.email
+      fill_in 'パスワード', with: login_user.password
+      click_button 'ログインする'
+    end
+    context '在庫を新規登録する場合' do
+      # 
+    end
+
+    context '既存在庫を更新する場合' do
+      #
+    end
+
+    context '既存在庫を削除する場合' do
+    end
   end
 end

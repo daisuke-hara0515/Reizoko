@@ -37,6 +37,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'メールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
+      click_on '新規登録'
     end
 
     it '新規在庫登録したらindex viewに載る' do

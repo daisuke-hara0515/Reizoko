@@ -40,7 +40,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
       click_on '新規登録'
-      fill_in '在庫名', with: 'テストデータ'
+      fill_in 'stock[name]', with: stock_data.name #fill_inに読み込ませるのはinputのname=""の部分
 
     end
 

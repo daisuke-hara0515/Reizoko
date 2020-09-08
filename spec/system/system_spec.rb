@@ -31,13 +31,17 @@ RSpec.describe 'stock管理画面一覧',type: :system do
   
   describe 'Stock(在庫)に関するテスト' do
     let(:user_a) {FactoryBot.create(:user, name: 'ユーザーA', email:'a@example.com')}
+    let(:stock_data) {FactoryBot.create(:stock, name: 'トマト',stock: 1,unit: "個",memo: "真っ赤",expire_date: "2021-01-01")}
     let(:login_user) {user_a}
+
     before do
       visit login_path
       fill_in 'メールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
       click_on '新規登録'
+      fill_in '在庫名', with: 'テストデータ'
+
     end
 
     it '新規在庫登録したらindex viewに載る' do

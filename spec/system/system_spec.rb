@@ -41,7 +41,10 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       click_button 'ログインする'
       click_on '新規登録'
       fill_in 'stock[name]', with: stock_data.name #fill_inに読み込ませるのはinputのname=""の部分
-
+      fill_in 'stock[stock]', with: stock_data.stock
+      fill_in 'stock[unit]', with: stock_data.unit
+      fill_in 'stock[expire_date]', with: stock_data.expire_date
+      fill_in 'stock[memo]', with: stock_data.memo
     end
 
     it '新規在庫登録したらindex viewに載る' do

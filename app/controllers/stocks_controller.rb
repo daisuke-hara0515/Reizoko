@@ -37,7 +37,12 @@ class StocksController < ApplicationController
     # 器にパラメータを注ぐ
     def create
         @stocks = current_user.stocks.new(stock_params)
-        @stocks.control_number = current_user.stocks.pluck(:control_number).max.next
+        if Stock.count == 0
+            @stocks.control_number = 1
+        else
+            @stocks.control_number = current_user.stocks.pluck(:control_number).max.next
+        end
+
         @stocks.expire_date = Date.parse(stock_params[:expire_date])
         if @stocks.save
           redirect_to stocks_path, notice: "「#{@stocks.name}」を新規登録しました！"

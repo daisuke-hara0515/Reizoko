@@ -31,7 +31,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
   
   describe 'Stock(在庫)に関するテスト' do
     let(:user_a) {FactoryBot.create(:user, name: 'ユーザーA', email:'a@example.com')}
-    let(:stock_data) {FactoryBot.create(:stock, name: 'トマト',stock: 1,unit: "個",memo: "真っ赤",expire_date: "2021-01-01")}
+    let(:stock_data) {FactoryBot.create(:stock, name: 'トマト',stock: 1,unit: "個",memo: "真っ赤",expire_date: "2021-01-01",control_number: 1)}
     let(:login_user) {user_a}
 
     before do
@@ -45,6 +45,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'stock[unit]', with: stock_data.unit
       fill_in 'stock[expire_date]', with: stock_data.expire_date
       fill_in 'stock[memo]', with: stock_data.memo
+      click_on '登録する'
     end
 
     it '新規在庫登録したらindex viewに載る' do

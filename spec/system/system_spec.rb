@@ -39,20 +39,24 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'メールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
+      new_stock_registration
     end
 
-    it '新規在庫登録したらindex viewに載る' do      
-      new_stock_registration
+    it '新規在庫登録したらindex viewに載る' do
       expect(page).to have_selector 'td', text: 'トマト'
     end
 
     it '在庫登録したものを削除したらindex viewから消える' do
-      new_stock_registration
       click_on '削除'
       expect(page).to have_no_selector 'td', text: 'トマト'
     end
 
     it '既存在庫を更新したらindex viewに更新した情報が載る' do
+      click_on '編集'
+      fill_in 'stock[memo]',with: "編集テストだよ！"
+      click_on '更新する'
+      expect(page).to have_selector 'td', text: '編集テストだよ！'
+
     end
 
   end

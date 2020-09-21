@@ -42,13 +42,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
     end
 
     it '新規在庫登録したらindex viewに載る' do      
-      click_on '新規登録'
-      fill_in 'stock[name]', with: "トマト"
-      fill_in 'stock[stock]', with: 1
-      fill_in 'stock[unit]', with: "個"
-      fill_in 'stock[expire_date]', with: "002020-01-01"
-      fill_in 'stock[memo]', with: "テスト"
-      click_on '登録する'
+      new_stock_registration
       expect(page).to have_selector 'td', text: 'トマト'
     end
 

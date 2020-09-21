@@ -62,6 +62,9 @@ RSpec.describe 'stock管理画面一覧',type: :system do
   end
 
   describe 'CSVに関するテスト' do
-    
+    it 'csvで新規登録を行ったら登録が成功すること' do
+    end
+    it 'csvで既存在庫情報を変更したら更新成功すること' do
+    end
   end
 end

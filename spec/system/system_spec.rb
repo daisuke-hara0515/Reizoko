@@ -31,7 +31,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
   
   describe 'Stock(在庫)に関するテスト' do
     let(:user_a) {FactoryBot.create(:user, name: 'ユーザーA', email:'a@example.com')}
-    let(:stock_data) {FactoryBot.create(:stock, name: 'トマト',stock: 1,unit: "個",memo: "真っ赤",expire_date: "2021-01-01",control_number: 1)}
+    # let(:stock_data) {FactoryBot.create(:stock, name: 'トマト',stock: 1,unit: "個",memo: "真っ赤",expire_date: "2021-01-01",control_number: 1)}
     let(:login_user) {user_a}
 
     before do
@@ -40,16 +40,18 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
       click_on '新規登録'
-      fill_in 'stock[name]', with: stock_data.name #fill_inに読み込ませるのはinputのname=""の部分
-      fill_in 'stock[stock]', with: stock_data.stock
-      fill_in 'stock[unit]', with: stock_data.unit
-      fill_in 'stock[expire_date]', with: stock_data.expire_date
-      fill_in 'stock[memo]', with: stock_data.memo
+      fill_in 'stock[name]', with: "トマト"
+      fill_in 'stock[stock]', with: 1
+      fill_in 'stock[unit]', with: "個"
+      fill_in 'stock[expire_date]', with: "002020-01-01"
+      fill_in 'stock[memo]', with: "テスト"
       click_on '登録する'
     end
 
-    it '新規在庫登録したらindex viewに載る' do
-      # テスト
+    it '新規在庫登録したらindex viewに載る' do      
+      expect(page).to have_content 'トマト','1.0' #have_contentの引数は2つまで
+      expect(page).to have_content '個','2020-01-01'
+      expect(page).to have_content 'テスト'
     end
 
     it '既存在庫を削除したらindex viewから消える' do

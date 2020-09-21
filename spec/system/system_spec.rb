@@ -60,4 +60,8 @@ RSpec.describe 'stock管理画面一覧',type: :system do
     end
 
   end
+
+  describe 'CSVに関するテスト' do
+    
+  end
 end

@@ -39,6 +39,9 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'メールアドレス', with: login_user.email
       fill_in 'パスワード', with: login_user.password
       click_button 'ログインする'
+    end
+
+    it '新規在庫登録したらindex viewに載る' do      
       click_on '新規登録'
       fill_in 'stock[name]', with: "トマト"
       fill_in 'stock[stock]', with: 1
@@ -46,12 +49,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       fill_in 'stock[expire_date]', with: "002020-01-01"
       fill_in 'stock[memo]', with: "テスト"
       click_on '登録する'
-    end
-
-    it '新規在庫登録したらindex viewに載る' do      
-      expect(page).to have_content 'トマト','1.0' #have_contentの引数は2つまで
-      expect(page).to have_content '個','2020-01-01'
-      expect(page).to have_content 'テスト'
+      expect(page).to have_selector 'td', text: 'トマト'
     end
 
     it '既存在庫を削除したらindex viewから消える' do

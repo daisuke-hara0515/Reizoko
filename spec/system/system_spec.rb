@@ -46,11 +46,10 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       expect(page).to have_selector 'td', text: 'トマト'
     end
 
-    it '既存在庫を削除したらindex viewから消える' do
+    it '在庫登録したものを削除したらindex viewから消える' do
+      new_stock_registration
       click_on '削除'
-      expect(page).to have_content '「トマト」が削除されました！'
-      stock = Stock.find_by(name:'トマト')
-      expect(stock).to eq nil
+      expect(page).to have_no_selector 'td', text: 'トマト'
     end
 
     it '既存在庫を更新したらindex viewに更新した情報が載る' do

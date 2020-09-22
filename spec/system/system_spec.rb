@@ -63,6 +63,10 @@ RSpec.describe 'stock管理画面一覧',type: :system do
 
   describe 'CSVに関するテスト' do
     it 'csvで新規登録を行ったら登録が成功すること' do
+      # アップロードするファイル(データ？)を準備
+      # 事前にログイン
+      # アップロードファイルを選択
+      # アップロード実行
     end
     it 'csvで既存在庫情報を変更したら更新成功すること' do
     end

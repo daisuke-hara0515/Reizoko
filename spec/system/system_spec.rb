@@ -69,6 +69,7 @@ RSpec.describe 'stock管理画面一覧',type: :system do
       # アップロード実行
     end
     it 'csvで既存在庫情報を変更したら更新成功すること' do
+      # 後日てすと作成
     end
   end
 end
